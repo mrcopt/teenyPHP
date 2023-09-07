@@ -1,9 +1,24 @@
-#Turn the Rewrite Engine On
-RewriteEngine On
+# Turn Rewrite Engine on
+RewriteEngine on
 
-#Accept the loading of files and directories that exist
+# If file or directory exists serve it
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-#Everything else is directed to the index page
-RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+# Direct everything else to App entry
+RewriteRule ^.*$ index.php [L,QSA]
+
+# Make it safe
+ServerSignature Off
+Header unset X-Powered-By
+
+# Allow iframes
+Header unset X-Frame-Options
+
+# Deny access to the core
+RewriteRule ^app/.*$ - [F,L,NC]
+
+# Deny access to .conf files
+<Files ~ "\.(conf)$">
+	deny from all
+</Files>

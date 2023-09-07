@@ -16,7 +16,8 @@ spl_autoload_register(function($classname){
 });
 
 //Require core app files
-require '_config.php';
+require '../config.php';
+require '_configs.php';
 require '_functions.php';
 require 'Database.php';
 require 'Model.php';

@@ -1,26 +1,17 @@
 <?php
 /**
  * @package  teenyPHP
- * @version  0.1.0
+ * @version  0.1.1
  * @todo	 Add environment specific constants for local development 
  */
 
 
 /*
-* App configuration file
+* App details file
 */
 
-//Database configuration
-define('DATABASE', array(
-	'HOST'     		=> 'localhost',
-	'DATABASE' 		=> 'my_database',
-	'USER'     		=> 'user',
-	'PASSWORD' 		=> 'password',
-	'DRIVER'   		=> ''
-));
-
 //Defining paths
-define('ROOT', 'http://localhost:88/teenyPHP');
+define('ROOT', 'http://localhost:80/teenyPHP');
 define('HOME_URL', ROOT . '/public');
 define('ASSETS', HOME_URL . '/assets');
 
@@ -28,7 +19,7 @@ define('ASSETS', HOME_URL . '/assets');
 define('APP', array(
 	'NAME' 			=> 'teenyPHP',
 	'DESCRIPTION' 	=> 'A micro sized PHP Framework',
-	'VERSION' 		=> '0.1.0-alpha',
+	'VERSION' 		=> '0.1.1',
 	'AUTHOR' 		=> 'mrco.pt',
 	'GENERATOR' 	=> 'teenyPHP'
 ));
