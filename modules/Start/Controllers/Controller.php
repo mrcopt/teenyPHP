@@ -4,34 +4,26 @@
  * @version  0.0.1
  */
 
-// use App\Controller;
-use App\View;
+//use App\Controller;
 
+/**
+ * Start Class
+ */
 class Start /*extends Controller*/
 {
-   public function __construct(string $Method, string $Args = null)
-   {
-      $this->$Method($Args);
-   }
-   
-	public function Default(string $Args = null){
-      show('This is from Start controller and Default method','TEST');
-      show($Args,'Args');
+	public function __construct(string $Method, string $Args = null)
+	{
+		$this->$Method($Args);
+	}
+	
+	public function Default(string $Args = null)
+	{	
+		\App\View::Render($this->File(get_class(),'Index'), $Args);
+	}
 
-      $Controller = get_class();
-
-      new View($Controller,'Index',$Args);
-   }
-   /*
-   public function Render($View,$Args){
-		
-      $View = $path.'/views/'.$view.'.view.php';
-      if(file_exists($file)) {
-         require $file;
-      } else {
-         show('View file was not found!');
-      }
-   }
-   */
+	public function File(string $Controller, string $View) : string
+	{
+		$File = ROOT.'/modules/'.$Controller.'/Views/'.$View.'.view.php';
+		return $File;
+	}
 }
-

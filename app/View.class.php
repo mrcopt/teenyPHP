@@ -12,35 +12,20 @@ namespace App;
 
 class View {
 
-   public function __construct(string $Controller, string $View, string $Args)
+   public function __construct(string $File, string $Args)
    {
-      $this->Render($Controller,$View,$Args);
+      $this->Render($File,$Args);
    }
 
-   public function Render(string $Controller, string $View, string $Args){
-      $File = ROOT.'/modules/'.$Controller.'/Views/'.$View.'.view.php';
-
+   public static function Render(string $File, string $Args){
       if(file_exists($File)) {
-
          ob_start();
          //Header::set($mime);
          //Header::cache($file);
          print file_get_contents($File);
          ob_flush();
-
       } else {
          show('View file was not found!');
       }
    }
-
-   /*
-   public function Partial(string $Which)
-   {
-      ob_start();
-
-      print file_get_contents($Which);
-      ob_flush();
-   }
-   */
-
 }

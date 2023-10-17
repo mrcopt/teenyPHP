@@ -10,5 +10,7 @@
 /** Set-up the directory variables */
 define('ROOT', getcwd());
 
+
+echo 'WTF';
 /** Adds the autoloader */
-require (ROOT . '/app/init.php');
+//require (ROOT . '/app/_init.php');

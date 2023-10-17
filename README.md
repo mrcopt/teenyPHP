@@ -1,3 +1,3 @@
-# SAEM
+# teenyPHP
 
-School Assets and Equipment Management
+A Plugin based PHP Framework

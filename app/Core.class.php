@@ -11,53 +11,47 @@ use App\Router;
  * App main class 
  */
 class Core {
-	
-	// CSRF field name on HTML
-  const CSRF_FIELD = '_csrf';
-  
-	// All request methods allowed
-  const REQUEST_ALLOWED = ['POST', 'GET', 'HEAD', 'PUT', 'DELETE'];
-   
-  // Common proxy headers
-  const PROXY_HEADERS = [
-		'HTTP_VIA','VIA','Proxy-Connection','HTTP_FORWARDED_FOR','HTTP_X_FORWARDED',
-		'HTTP_FORWARDED','HTTP_CLIENT_IP','HTTP_FORWARDED_FOR_IP','X-PROXY-ID',
-    'MT-PROXY-ID','X-TINYPROXY','X_FORWARDED_FOR','FORWARDED_FOR','X_FORWARDED',
-    'FORWARDED','CLIENT-IP','CLIENT_IP','PROXY-AGENT','HTTP_X_CLUSTER_CLIENT_IP',
-		'FORWARDED_FOR_IP','HTTP_PROXY_CONNECTION'
-  ];
-
-  // Some user-agents for mobile detection
-  const MOBILE_UA = [
-    '/iphone/i' => 'iPhone', 
-    '/ipod/i' => 'iPod', 
-    '/ipad/i' => 'iPad', 
-    '/android/i' => 'Android', 
-    '/blackberry/i' => 'BlackBerry', 
-    '/webos/i' => 'Mobile'
-  ];
 
 	// Run the app
 	public function __construct()
 	{
 		new Router;
 	}
+	
+	// CSRF field name on HTML
+	/*
+  const CSRF_FIELD = '_csrf';
+  */
+	// All request methods allowed
+	/*
+  const REQUEST_ALLOWED = ['POST', 'GET', 'HEAD', 'PUT', 'DELETE'];
+	*/
+  // Common proxy headers
+  /*
+  const PROXY_HEADERS = [
+		'HTTP_VIA','VIA','Proxy-Connection','HTTP_FORWARDED_FOR','HTTP_X_FORWARDED',
+		'HTTP_FORWARDED','HTTP_CLIENT_IP','HTTP_FORWARDED_FOR_IP','X-PROXY-ID',
+	 'MT-PROXY-ID','X-TINYPROXY','X_FORWARDED_FOR','FORWARDED_FOR','X_FORWARDED',
+	 'FORWARDED','CLIENT-IP','CLIENT_IP','PROXY-AGENT','HTTP_X_CLUSTER_CLIENT_IP',
+		'FORWARDED_FOR_IP','HTTP_PROXY_CONNECTION'
+  ];
+  */
 
-	// Removing slash from strings
-	public static function removeSlashes(string $url): string {
-		return trim($url, '/');
-	}
+  // Some user-agents for mobile detection
+  /*
+  const MOBILE_UA = [
+	 '/iphone/i' => 'iPhone', 
+	 '/ipod/i' => 'iPod', 
+	 '/ipad/i' => 'iPad', 
+	 '/android/i' => 'Android', 
+	 '/blackberry/i' => 'BlackBerry', 
+	 '/webos/i' => 'Mobile'
+  ];
+  */
 
-	// Return current URL in an array
-	public static function getUrlArray() : array {
-		return $URL = explode('/', self::removeSlashes($_SERVER['REQUEST_URI']) ) ;
-	}
+	
 
-	// Return string formatted in first letter uppercase
-	public static function format_ucfirst(string $String) : string {
-		return $String = ucfirst(strtolower($String));
-	}
-
+	/*
 	// Load all classes
 	public static function loadClasses(): array {
 		return self::rglob(DIRECTORY . SEPARATOR . 'app' . SEPARATOR . 'classes' . SEPARATOR . '*.php');

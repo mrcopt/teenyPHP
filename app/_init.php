@@ -4,21 +4,7 @@
  * @version  0.0.1
  */
 
-/**
- * Autoloading file:
- * ##############################################
- * ########### Do not touch this file ###########
- * ##############################################
- * Firstly load the class Autoloader with name App
- * Adds the configuration file to the start of all
- * Verify if you are in debugging version or not
- * Set the application language automatically
- * Load vendor, classes and functions in the following order
- * Deny access to the folder app and vendor if using php webserver
- * And finally it adds and load all the routes then initialize all
- */
-
-$ConfigFile = ROOT . '/app/config.php';
+$ConfigFile = ROOT . '/app/_config.php';
 $AutoLoader = ROOT . '/app/Autoload.class.php';
 
 if (file_exists($ConfigFile)) { 
@@ -33,7 +19,6 @@ if (DEBUG) {
 	error_reporting(E_ALL);
 	ini_set('display_errors', 'on');
 
-	require_once '_functions.php';
 }
 
 // Import App logic code

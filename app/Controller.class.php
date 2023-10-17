@@ -5,12 +5,21 @@
  */
 namespace App;
 
-/*
-* Controller class
-* Base controller class to be used by other controllers
-*/
+use App\View;
 
-class Controller{
+class Controller
+{
+	/*
+	public function render(string $Controller,string $View, string $Args)
+	{
+		$File = ROOT.'/modules/'.$Controller.'/Views/'.$View.'.view.php';
 
-	
+		if(file_exists($File)) {
+			View::Render($File);
+		} else {
+			\App\Helper::show('View file was not found!');
+		}
+		
+	}
+	*/
 }
